@@ -1,4 +1,4 @@
-# global refs to limmbo and numpy
+# global refs to limmbo and np (ie, numpy)
 np <- NULL
 limmbo <- NULL
 
