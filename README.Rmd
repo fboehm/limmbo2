@@ -33,5 +33,19 @@ devtools::install_github("fboehm/limmbo2")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## basic example code
+library(limmbo2)
+pheno <- matrix(data = runif(300), nrow = 100, ncol = 3)
+kinship <- diag(100)
+t(chol(kinship)) -> chol_kin
+
+prep_data(pheno, kinship) -> input_data
+sample_id <- paste0("SID", 1:nrow(pheno))
+pheno_id <- paste0("PID", 1:ncol(pheno))
+
+make_limmbo(input_data, TRUE, 10, 2) -> l_out
+bs_covar_est(l_out, 1, 1) -> bs_out
+bs_out2 <- lapply(FUN = convert_for_bscombine, X = bar)
+
+combine_bs(bs_out2, l_out)
+
 ```
