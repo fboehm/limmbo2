@@ -39,12 +39,10 @@ kinship <- diag(100)
 t(chol(kinship)) -> chol_kin
 
 prep_data(pheno, kinship) -> input_data
-sample_id <- paste0("SID", 1:nrow(pheno))
-pheno_id <- paste0("PID", 1:ncol(pheno))
 
 make_limmbo(input_data, TRUE, 10, 2) -> l_out
 bs_covar_est(l_out, 1, 1) -> bs_out
-bs_out2 <- lapply(FUN = convert_for_bscombine, X = bar)
+bs_out2 <- lapply(FUN = convert_for_bscombine, X = bs_out)
 
 combine_bs(bs_out2, l_out)
 
