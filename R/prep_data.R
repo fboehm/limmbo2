@@ -25,6 +25,7 @@ prep_data <- function(pheno, kinship){
 #' @param timing logical
 #' @param iterations positive integer
 #' @param subset_size positive integer, number of phenotypes per bootstrap sample
+#' @export
 #'
 make_limmbo <- function(datainput, timing, iterations, subset_size){
   iterations_np <- reticulate::np_array(iterations, dtype = "int64")

@@ -3,4 +3,5 @@
 export(bs_covar_est)
 export(combine_bs)
 export(convert_for_bscombine)
+export(make_limmbo)
 export(prep_data)
