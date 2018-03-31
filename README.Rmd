@@ -21,7 +21,14 @@ The goal of limmbo2 is to ...
 
 ## Installation
 
-You can install limmbo2 from github with:
+First, be sure that you have python modules `limix` and `limmbo` installed:
+
+```{bash, eval = FALSE}
+pip install limix
+pip install limmbo
+```
+
+Once those two modules are successfully installed, you can proceed to install the limmbo2 R package:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
