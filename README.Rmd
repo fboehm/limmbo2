@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 # limmbo2
 
-The goal of limmbo2 is to ...
+The goal of `limmbo2` is to estimate Vg and Ve covariance matrices in the multivariate LMM. Note that it uses the python module `limmbo` to do this. The preprint article that describes the `limmbo` python module's methods is here: [https://www.biorxiv.org/content/early/2018/01/30/255497](https://www.biorxiv.org/content/early/2018/01/30/255497)
 
 ## Installation
 
@@ -51,6 +51,8 @@ make_limmbo(input_data, TRUE, 10, 2) -> l_out
 bs_covar_est(l_out, 1, 1) -> bs_out
 bs_out2 <- lapply(FUN = convert_for_bscombine, X = bs_out)
 
-combine_bs(bs_out2, l_out)
+combine_bs(bs_out2, l_out) -> fits
+(fits$Cn_fit -> Ve)
+(fits$Cg_fit -> Vg)
 
 ```
