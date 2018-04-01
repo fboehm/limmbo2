@@ -4,4 +4,4 @@ language: R
 sudo: false
 cache: packages
 before_install:
-  - pip install numpy limix limmbo
+  - pip install --user numpy limix limmbo
