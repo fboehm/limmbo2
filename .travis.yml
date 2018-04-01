@@ -1,7 +1,8 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
-sudo: false
+sudo: required
+dist: trusty
 cache: packages
 before_install:
   - sudo apt-get update
@@ -20,6 +21,7 @@ before_install:
   # Useful for debugging any issues with conda
   - conda info -a
   - conda install -c conda-forge limix
+  - pip install --upgrade pip
   - pip install https://www.parallelpython.com/downloads/pp/pp-1.6.6.tar.gz
   - pip install limmbo
 addons:
