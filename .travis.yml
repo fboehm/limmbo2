@@ -24,8 +24,8 @@ before_install:
   - conda info -a
   - conda install -c conda-forge limix
   - pip install --upgrade pip
-  - pip install https://www.parallelpython.com/downloads/pp/pp-1.6.6.tar.gz
-  - pip install limmbo
+  - pip install --user https://www.parallelpython.com/downloads/pp/pp-1.6.6.tar.gz
+  - pip install --user limmbo
 addons:
   apt:
     packages:
