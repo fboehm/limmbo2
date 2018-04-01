@@ -19,5 +19,5 @@ before_install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  - conda install -c conda-forge limix
+  - conda install -c conda-forge limix pp
   - pip install limmbo
