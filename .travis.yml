@@ -20,4 +20,4 @@ before_install:
   # Useful for debugging any issues with conda
   - conda info -a
   - conda install -c conda-forge limix
-  - pip install numpy limmbo
+  - pip install limmbo
