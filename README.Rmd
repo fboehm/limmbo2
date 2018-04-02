@@ -24,7 +24,7 @@ The goal of `limmbo2` is to estimate Vg and Ve covariance matrices in the multiv
 First, be sure that you have python modules `limix` and `limmbo` installed:
 
 ```{bash, eval = FALSE}
-pip install limix
+conda install -c conda-forge limix
 pip install limmbo
 ```
 
