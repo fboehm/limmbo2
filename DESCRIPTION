@@ -1,9 +1,9 @@
 Package: limmbo2
-Title: What the Package Does (one line, title case)
+Title: Covariance Matrices Estimation for Multivariate Linear Mixed Effects Models in Genetics Studies
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.4.3)
+Authors@R: person("Frederick", "Boehm", email = "frederick.boehm@gmail.com", role = c("aut", "cre"))
+Description: limmbo2 is a R wrapper for the python module limmbo. limmbo performs covariance estimation for the multivariate linear mixed effects model, vec(Y) = X vec(B) + vec(G) + vec(E), where E and G are both matrix-variate normally distributed. The method relies on combination of multiple covariance matrix estimates from bootstrapped subsets of the phenotypes. Details are in a preprint at https://www.biorxiv.org/content/early/2018/01/30/255497.
+Depends: R
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
