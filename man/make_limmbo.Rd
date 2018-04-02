@@ -19,6 +19,8 @@ make_limmbo(datainput, timing, iterations, subset_size)
 Make a limmbo output object
 }
 \examples{
+\dontrun{
 prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100)) -> dat
 make_limmbo(dat, timing = TRUE, iterations = 10, subset_size = 2)
+}
 }

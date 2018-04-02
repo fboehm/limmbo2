@@ -15,5 +15,7 @@ prep_data(pheno, kinship)
 Prepare data for use with bootstrap covariance estimation function
 }
 \examples{
+\dontrun{
 prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100))
+}
 }

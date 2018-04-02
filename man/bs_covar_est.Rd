@@ -17,7 +17,9 @@ bs_covar_est(limmbo_out, cpus, seed)
 Perform covariance estimates for each of multiple bootstrap samples of traits
 }
 \examples{
+\dontrun{
 prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100)) -> dat
 make_limmbo(dat, timing = TRUE, iterations = 10, subset_size = 2) -> limmbo_out
 bs_covar_est(limmbo_out, cpus = 1, seed = 100)
+}
 }
