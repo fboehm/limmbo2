@@ -7,7 +7,7 @@
 make_limmbo(datainput, timing, iterations, subset_size)
 }
 \arguments{
-\item{datainput}{outputted object from InputData()}
+\item{datainput}{outputted object from prep_data}
 
 \item{timing}{logical}
 
@@ -17,4 +17,8 @@ make_limmbo(datainput, timing, iterations, subset_size)
 }
 \description{
 Make a limmbo output object
+}
+\examples{
+prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100)) -> dat
+make_limmbo(dat, timing = TRUE, iterations = 10, subset_size = 2)
 }

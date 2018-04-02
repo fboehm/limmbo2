@@ -17,3 +17,10 @@ a list
 \description{
 Combine bootstrap covariance estimate results into estimates of the full covariance matrices
 }
+\examples{
+prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100)) -> dat
+make_limmbo(dat, timing = TRUE, iterations = 10, subset_size = 2) -> limmbo_out
+bs_covar_est(limmbo_out, cpus = 1, seed = 100) -> bs_out
+bs_out2 <- lapply(X = bs_out, FUN = convert_for_bscombine)
+combine_bs(bs_out2, limmbo_out)
+}
