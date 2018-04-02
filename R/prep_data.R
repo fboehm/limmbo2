@@ -3,8 +3,9 @@
 #' @param pheno phenotypes matrix
 #' @param kinship kinship matrix
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100))
+#' }
 prep_data <- function(pheno, kinship){
 # cholesky decomposition of kinship:
   t(chol(kinship)) -> chol_kin
@@ -27,9 +28,10 @@ prep_data <- function(pheno, kinship){
 #' @param iterations positive integer
 #' @param subset_size positive integer, number of phenotypes per bootstrap sample
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100)) -> dat
 #' make_limmbo(dat, timing = TRUE, iterations = 10, subset_size = 2)
+#' }
 make_limmbo <- function(datainput, timing, iterations, subset_size){
   iterations_np <- reticulate::np_array(iterations, dtype = "int64")
   S_np <- np$int(subset_size)

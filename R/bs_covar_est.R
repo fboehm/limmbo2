@@ -5,10 +5,11 @@
 #' @param seed integer for pseudo random number seed (as an R object)
 #'
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100)) -> dat
 #' make_limmbo(dat, timing = TRUE, iterations = 10, subset_size = 2) -> limmbo_out
 #' bs_covar_est(limmbo_out, cpus = 1, seed = 100)
+#' }
 bs_covar_est <- function(limmbo_out, cpus, seed){
   # change inputs to np objects
   cpus_np <- np$int(cpus)
