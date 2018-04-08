@@ -7,8 +7,7 @@
 #' @param seed positive integer random seed
 #'
 limmbo2 <- function(kinship, pheno, niter = 10, S = 2, seed){
-    t(chol(kinship)) -> chol_kin
-    prep_data(pheno, chol_kin) -> input_data
+    prep_data(pheno, kinship) -> input_data
     make_limmbo(input_data, TRUE, niter, S) -> l_out
     bs_covar_est(l_out, 1, seed) -> bs_out
     bs_out2 <- lapply(FUN = convert_for_bscombine, X = bs_out)
