@@ -5,6 +5,7 @@
 #' @param niter integer number of iterations for limix calculations
 #' @param S number of phenotypes per bootstrap sample
 #' @param seed positive integer random seed
+#' @export
 #'
 limmbo2 <- function(kinship, pheno, niter = 10, S = 2, seed){
     prep_data(pheno, kinship) -> input_data

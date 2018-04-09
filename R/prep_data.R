@@ -8,7 +8,7 @@
 #' }
 prep_data <- function(pheno, kinship){
 # cholesky decomposition of kinship:
-  t(chol(kinship)) -> chol_kin
+  t(chol.default(kinship)) -> chol_kin
   # use transpose above to match python code
   limmbo$io$input$InputData() -> input_data
   sample_id <- paste0("SID", 1:nrow(pheno))
