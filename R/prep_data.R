@@ -7,15 +7,13 @@
 #' prep_data(pheno = matrix(rnorm(300), nrow = 100), kinship = diag(100))
 #' }
 prep_data <- function(pheno, kinship){
-# cholesky decomposition of kinship:
-  t(chol.default(kinship)) -> chol_kin
-  # use transpose above to match python code
   limmbo$io$input$InputData() -> input_data
   sample_id <- paste0("SID", 1:nrow(pheno))
   pheno_id <- paste0("PID", 1:ncol(pheno))
-  limmbo$io$input$InputData$addPhenotypes(input_data, phenotypes = chol_kin %*% pheno,
+  limmbo$io$input$InputData$addPhenotypes(input_data, phenotypes = pheno,
                                           phenotype_ID = pheno_id,
                                           pheno_samples = sample_id)
+
   limmbo$io$input$InputData$addRelatedness(input_data, relatedness = kinship,
                                            relatedness_samples = sample_id)
   return(input_data)
