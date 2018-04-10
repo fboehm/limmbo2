@@ -5,8 +5,17 @@ N <- 100
 pheno <- matrix(rnorm(P * N), nrow = N)
 limmbo2(pheno, kinship = diag(N), seed = 1) -> out
 
+# helper function to skip tests if we don't have the 'numpy' module
+skip_if_no_numpy <- function() {
+  have_numpy <- py_module_available("numpy")
+  if (!have_numpy)
+    skip("numpy not available for testing")
+}
+
+
 context("Testing limmbo2() when kinship is identity matrix, so the two components should be equal.")
 
 test_that("when kinship is identity matrix, the two variance components are equal", {
+  skip_if_no_numpy()
   expect_identical(out$Ve, out$Vg)
 })
