@@ -82,8 +82,8 @@ li_out
 
 ```{r}
 n <- 500
-A <- matrix(runif(n ^ 2) * 2 - 1, ncol = n) 
-kinship <- cov2cor(t(A) %*% A)
+A <- matrix(runif(n ^ 2), ncol = n) 
+kinship <- round(t(A) %*% A, 6)
 pheno <- matrix(rnorm(1500), nrow = 500)
 
 system.time(calc_covs(pheno, kinship) -> cc_out)
