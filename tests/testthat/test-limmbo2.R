@@ -2,7 +2,7 @@ library(limmbo2)
 
 P <- 5
 N <- 100
-pheno <- matrix(rnorm(P * N), nrow = 100)
+pheno <- matrix(rnorm(P * N), nrow = N)
 limmbo2(pheno, kinship = diag(N), seed = 1) -> out
 
 context("Testing limmbo2() when kinship is identity matrix, so the two components should be equal.")
