@@ -17,5 +17,6 @@ context("Testing limmbo2() when kinship is identity matrix, so the two component
 
 test_that("when kinship is identity matrix, the two variance components are equal", {
   skip_if_no_numpy()
+  skip_on_travis()
   expect_identical(out$Ve, out$Vg)
 })
