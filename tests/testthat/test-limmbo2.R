@@ -7,7 +7,7 @@ limmbo2(pheno, kinship = diag(N), seed = 1) -> out
 
 # helper function to skip tests if we don't have the 'numpy' module
 skip_if_no_numpy <- function() {
-  have_numpy <- py_module_available("numpy")
+  have_numpy <- reticulate::py_module_available("numpy")
   if (!have_numpy)
     skip("numpy not available for testing")
 }
